@@ -17,10 +17,13 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'capybara', '~> 2.13'
+  gem 'capybara', '~> 2.14.3'
   gem 'selenium-webdriver'
-  gem 'rspec-rails', '~> 3.0'
+  gem 'rspec', '~> 3.6.0'
+  gem 'rspec-rails', '~> 3.6.0'
   gem 'database_cleaner'
+  gem 'warden', '~> 1.2', '>= 1.2.7'
+  gem 'factory_girl_rails', '~> 4.8'
 end
 
 group :development do
