@@ -19,3 +19,4 @@ Key requirement: company needs documentation that salaried employees did or did 
 
 ## Refactor Todos:
 - Refactor user association integration test in post_spec
+- Add full_name method for users
