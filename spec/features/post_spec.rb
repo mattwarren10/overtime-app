@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'navigate' do
   let(:user) { FactoryGirl.create(:user) }
   let(:post) do
-    Post.create(date: Date.today, rationale: "asdf", user_id: user.id)
+    Post.create(date: Date.today, rationale: "asdf", user_id: user.id, overtime_request: 3.2)
   end
   before do
     login_as(user, :scope => :user)
@@ -50,7 +50,7 @@ describe 'navigate' do
       logout(:user)
       delete_user = FactoryGirl.create(:user)
       login_as(delete_user, :scope => :user)
-      post_to_delete = Post.create(date: Date.today, rationale: 'asdf', user_id: delete_user.id)
+      post_to_delete = Post.create(date: Date.today, rationale: 'asdf', user_id: delete_user.id, overtime_request: 3.2)
       visit posts_path
       click_link("delete_post_#{post_to_delete.id}_from_index")
       expect(page.status_code).to eq(200)
@@ -68,14 +68,14 @@ describe 'navigate' do
     it 'can be created from new form page' do      
       fill_in 'post[date]', with: Date.today
       fill_in 'post[rationale]', with: "Some rationale"
-      click_on "Save"
-
-      expect(page).to have_content("Some rationale")
+      fill_in 'post[overtime_request]', with: 4.5
+      expect { click_on 'Save' }.to change(Post, :count).by(1)
     end
 
     it 'will have a user associated with it' do
       fill_in 'post[date]', with: Date.today
       fill_in 'post[rationale]', with: "User_Association"
+      fill_in 'post[overtime_request]', with: 4.5
       click_on "Save"
 
       expect(User.last.posts.last.rationale).to eq("User_Association")
