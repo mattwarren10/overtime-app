@@ -21,11 +21,7 @@ Key requirement: company needs documentation that salaried employees did or did 
 - X Update the styles for forms
 
 ## Refactor Todos:
-- Refactor user association integration test in post_spec
 - Refactor posts/_form for admin user with status
-- Fix post_spec.rb:82 to use factories
-- Fix post_spec.rb:49 to have correct user reference and not require update
-- Fix post_spec.rb:28 to have correct user reference and not require update
 
 ## Misc:
 - Fix search for posts
