@@ -19,9 +19,22 @@ describe 'navigate' do
 
     it 'has a list of posts' do
       post1 = FactoryGirl.create(:post)
+      post1.update(user_id: @user.id)
+      post1.user_id = @user.id
       post2 = FactoryGirl.create(:second_post)
-      visit posts_path
+      post2.update(user_id: @user.id)
+      post2.user_id = @user.id
+      visit posts_path            
       expect(page).to have_content(/rationale|content/)
+
+    end
+    it 'has a scope so that only post creators can see their posts' do
+      post1 = Post.create(date: Date.today, rationale: "asdf", user_id: @user.id)
+      post2 = Post.create(date: Date.today, rationale: "asdf", user_id: @user.id)
+      other_user = FactoryGirl.create(:other_user)
+      post_from_other_user = Post.create(date: Date.today, rationale: "This post shouldn't be seen", user_id: other_user.id)
+      visit posts_path
+      expect(page).to_not have_content(/This post shouldn't be seen/)
     end
   end
 
@@ -33,11 +46,12 @@ describe 'navigate' do
     end
   end
 
-  describe 'delete' do
-    before do 
-      @post = FactoryGirl.create(:post)
-    end
+  describe 'delete' do    
     it 'can be deleted' do
+      @post = FactoryGirl.create(:post)
+      # Refactor
+      @post.update(user_id: @user.id)
+      @post.user_id = @user.id    
       visit posts_path
       click_link("delete_post_#{@post.id}_from_index")
       expect(page.status_code).to eq(200)
@@ -86,8 +100,8 @@ describe 'navigate' do
 
     it 'cannot be edited by a non authorized user' do
       logout(:user)
-      non_authorized_user = FactoryGirl.create(:non_authorized_user)
-      login_as(non_authorized_user, :scope => :user)
+      other_user = FactoryGirl.create(:other_user)
+      login_as(other_user, :scope => :user)
       visit edit_post_path(@edit_post)
       expect(current_path).to eq(root_path)
     end

@@ -1,7 +1,7 @@
 <% if flash[:alert] %>
     <%= js add_gritter(flash[:alert], title: "Overtime App", sticky: false, time: 3500) %>
-    <% elsif flash[:error] %>
+<% elsif flash[:error] %>
     <%= js add_gritter(flash[:error], title: "Overtime App", sticky: false, time: 3500) %>
-    <% elsif flash[:notice] %>
+<% elsif flash[:notice] %>
     <%= js add_gritter(flash[:notice], title: "Overtime App", sticky: false, time: 3500) %>
 <% end %>
