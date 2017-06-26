@@ -6,6 +6,7 @@ Key requirement: company needs documentation that salaried employees did or did 
 - X Post -> date:date rationale:text
 - X User -> Devise
 - X AdminUser -> STI
+- AuditLog
 
 ## Features:
 - Approval workflow 
@@ -17,11 +18,11 @@ Key requirement: company needs documentation that salaried employees did or did 
 
 ## UI:
 - X Bootstrap -> formatting
-- Icons from Font Awesome
+- X Icons from glyphicons
 - X Update the styles for forms
 
 ## Refactor Todos:
-- Refactor posts/_form for admin user with status
+- X Refactor posts/_form for admin user with status
 
 ## Misc:
 - Fix search for posts
