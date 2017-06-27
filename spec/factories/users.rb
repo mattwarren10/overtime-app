@@ -8,6 +8,7 @@ FactoryGirl.define do
     email { generate :email }
     password 'asdfasdf'
     password_confirmation 'asdfasdf'
+    phone '8888888888'
   end
 
   factory :admin_user, class: "AdminUser" do
@@ -16,6 +17,7 @@ FactoryGirl.define do
     email { generate :email }
     password 'asdfasdf'
     password_confirmation 'asdfasdf'
+    phone '8888888888'
   end
 
   factory :other_user, class: "User" do
@@ -24,6 +26,7 @@ FactoryGirl.define do
     email { generate :email }
     password 'asdfasdf'
     password_confirmation 'asdfasdf'
+    phone '8888888888'
   end
 
 end
