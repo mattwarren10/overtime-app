@@ -1,6 +1,6 @@
 # Overtime App
 
-Key requirement: company needs documentation that salaried employees did or did not get overtime each week
+## Key requirement: company needs documentation that salaried employees did or did not get overtime each week
 
 ## Models
 - X Post -> date:date rationale:text
@@ -21,8 +21,11 @@ Key requirement: company needs documentation that salaried employees did or did 
 - X Icons from glyphicons
 - X Update the styles for forms
 
-## Refactor Todos:
-- X Refactor posts/_form for admin user with status
+## Todos:
+- Integrate validation for phone attr in User
+	* No spaces or dashes 
+	* exactly 10 characters
+	* all characters have to be a number
 
 ## Misc:
 - Fix search for posts
