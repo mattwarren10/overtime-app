@@ -7,11 +7,7 @@ namespace :notification do
   	# 4. send a msg that has instructions and a link to log time
   	# User.all.each do |user|
   	# 	SmsTool.send_sms()
-  	# end  	
-  	
-  	# no spaces or dashes
-  	# exactly 10  characters
-  	# all characters have to be a number
+  	# end
   end
 
 end
