@@ -1,5 +1,5 @@
 .pending-homepage {
-	margin: 20px 0px;
+	margin: 20px 0;
 	background-color: #e3e3e3;
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
@@ -19,4 +19,8 @@
 
 .pending-details {
 	font-weight: 900;
+}
+
+.homepage-block:hover {
+	background-color: #00328c
 }
