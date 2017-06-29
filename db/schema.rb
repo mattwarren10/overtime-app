@@ -25,18 +25,18 @@ ActiveRecord::Schema.define(version: 20170627203614) do
     t.index ["user_id"], name: "index_audit_logs_on_user_id", using: :btree
   end
 
-  create_table "posts", id: :bigserial, force: :cascade do |t|
+  create_table "posts", force: :cascade do |t|
     t.date     "date"
     t.text     "rationale"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
-    t.bigint   "user_id"
+    t.integer  "user_id"
     t.integer  "status",           default: 0
     t.decimal  "overtime_request", default: "0.0"
     t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
   end
 
-  create_table "users", id: :bigserial, force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
