@@ -16,15 +16,19 @@ AdminUser.create(email: "admin@test.com",
 
 puts "1 user created"
 
-100.times do |post|
-	Post.create!(date: Date.today, rationale: "ID: #{post}. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum minus, hic assumenda ad alias est reiciendis autem molestias fugit aut explicabo nobis ipsam ducimus et nam aspernatur cumque quae dolores?", user_id: @user.id, overtime_request: 2.4)
+30.times do |post|
+	Post.create!(date: Date.today - 3.days, rationale: "ID: #{post}. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum minus, hic assumenda ad alias est reiciendis autem molestias fugit aut explicabo nobis ipsam ducimus et nam aspernatur cumque quae dolores?", user_id: @user.id, overtime_request: 2.4)
 end
 
-puts "100 posts have been created."
+30.times do |post|
+	Post.create!(date: Date.today - 10.days, rationale: "ID: #{post}. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum minus, hic assumenda ad alias est reiciendis autem molestias fugit aut explicabo nobis ipsam ducimus et nam aspernatur cumque quae dolores?", user_id: @user.id, overtime_request: 2.4)
+end
 
-AuditLog.create!(user_id: @user.id, status: 0, start_date: (Date.today - 6.days))
-AuditLog.create!(user_id: @user.id, status: 0, start_date: (Date.today - 13.days))
-AuditLog.create!(user_id: @user.id, status: 0, start_date: (Date.today - 20.days))
+puts "60 posts have been created."
+
+AuditLog.create!(user_id: @user.id, status: 0, start_date: (Date.today - 4.days))
+AuditLog.create!(user_id: @user.id, status: 0, start_date: (Date.today - 11.days))
+AuditLog.create!(user_id: @user.id, status: 0, start_date: (Date.today - 18.days))
 
 
 puts "3 audit logs have been created."

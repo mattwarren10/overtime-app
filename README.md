@@ -6,13 +6,7 @@
 - X Post -> date:date rationale:text
 - X User -> Devise
 - X AdminUser -> STI
-- AuditLog
-	* keep track of if a employee had overtime or not
-	* dependencies: User
-	* attributes: 
-		** status:integer (enum) -> pending, complete
-		** start_date:date -> default previous monday
-		** date_verified
+- X AuditLog
 
 ## Features:
 - Approval workflow 
@@ -20,7 +14,7 @@
 - X Administrate admin dashboard
 - X Block non admin and guest users
 - Email summary to managers for approval
-- Needs to be documented if employee did not log overtime
+- X Needs to be documented if employee did not log overtime
 
 ## Todos:
 
