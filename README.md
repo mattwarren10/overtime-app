@@ -21,11 +21,10 @@
 - X Update buttons on employee homepage to be responsive
 - X Update buttons to include time span
 - X Update button sort order on employee homepage
-- Remove unnecessary nav bar buttons for managers
-- Fix admin dashboard bug
+- X Remove unnecessary nav bar buttons for managers
+- X Fix admin dashboard bug
 - Implement honeybadger error reporting
 - Implement new relic for keeping site alive
-- Check on data issue and verify correct hours are being tracked
 
 ## Todos:
 
