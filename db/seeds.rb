@@ -28,11 +28,11 @@ AuditLog.create!(user_id: @employee.id, status: 0, start_date: (Date.today - 19.
 puts "3 audit logs have been created."
 
 30.times do |post|
-	Post.create!(date: Date.today - 3.days, rationale: "ID: #{post}. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum minus, hic assumenda ad alias est reiciendis autem molestias fugit aut explicabo nobis ipsam ducimus et nam aspernatur cumque quae dolores?", user_id: @employee.id, overtime_request: 2.4)
+	Post.create!(date: Date.today - 3.days, rationale: "ID: #{post}. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum minus, hic assumenda ad alias est reiciendis autem molestias fugit aut explicabo nobis ipsam ducimus et nam aspernatur cumque quae dolores?", user_id: @employee.id, daily_hours: 12.4)
 end
 
 30.times do |post|
-	Post.create!(date: Date.today - 10.days, rationale: "ID: #{post}. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum minus, hic assumenda ad alias est reiciendis autem molestias fugit aut explicabo nobis ipsam ducimus et nam aspernatur cumque quae dolores?", user_id: @employee.id, overtime_request: 2.4)
+	Post.create!(date: Date.today - 10.days, rationale: "ID: #{post}. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum minus, hic assumenda ad alias est reiciendis autem molestias fugit aut explicabo nobis ipsam ducimus et nam aspernatur cumque quae dolores?", user_id: @employee.id, daily_hours: 12.4)
 end
 
 puts "60 posts have been created."
